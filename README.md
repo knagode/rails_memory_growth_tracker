@@ -38,7 +38,7 @@ And then execute:
 ## Configuration
 
 ```
-MemoryLeakHunter.configure do |config|
+MemoryGrowthTracker.configure do |config|
   config.redis_url = ENV.fetch(ENV.fetch("REDIS_URL", "redis://localhost:6379/0"))
 end
 ```
@@ -67,7 +67,7 @@ Rails.application.routes.draw do
 
   # Mount within authenticated admin section
   authenticate :admin_user do
-    mount MemoryLeakHunter::Engine, at: "/admin/memory_leak_hunter"
+    mount MemoryGrowthTracker::Engine, at: "/admin/memory_growth_tracker"
   end
 end
 ```
@@ -100,13 +100,13 @@ end
 
 ```ruby
 # View statistics
-MemoryLeakHunter::Tracker.print_stats
+MemoryGrowthTracker::Tracker.print_stats
 
 # Get top memory consuming URLs
-MemoryLeakHunter::Tracker.top_memory_urls
+MemoryGrowthTracker::Tracker.top_memory_urls
 
 # Clear all data
-MemoryLeakHunter::Tracker.clear_all_data
+MemoryGrowthTracker::Tracker.clear_all_data
 ```
 
 ## License
