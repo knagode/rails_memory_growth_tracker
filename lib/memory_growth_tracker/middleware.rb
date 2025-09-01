@@ -146,7 +146,6 @@ module MemoryGrowthTracker
         end
       rescue StandardError => e
         # Silently fail if account extraction fails
-        Rails.logger.debug "Memory growth tracker: Could not extract account info: #{e.message}"
       end
 
       account_info
