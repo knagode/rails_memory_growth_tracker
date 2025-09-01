@@ -1,6 +1,5 @@
-# Memory (RAM) Growth Tracker (detects memory bloats & leaks)
-
-A Rails engine for detecting and tracking memory growth patterns and mamory swap operations in production applications. Helps you identify requests that consume high amounts of RAM, especially useful for debugging memory growth and performance issues on platforms like Heroku.
+# Memory (RAM) Growth Tracker
+A Rails engine for detecting and tracking memory growth patterns (leaks & bloats) and memory swap operations. Helps you identify requests that consume high amounts of RAM and is compatible with Heroku.
 
 ## Features
 
