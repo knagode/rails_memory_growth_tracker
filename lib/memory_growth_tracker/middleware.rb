@@ -144,7 +144,7 @@ module MemoryGrowthTracker
           # Fallback to header if available
           account_info[:account_id] = env["HTTP_X_ACCOUNT_ID"]
         end
-      rescue StandardError => e
+      rescue StandardError => _e
         # Silently fail if account extraction fails
       end
 
