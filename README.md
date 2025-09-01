@@ -46,14 +46,14 @@ Configure Memory Leak Hunter using environment variables:
 
 | Environment Variable                      | Description                                                                    | Default Value |
 | ----------------------------------------- | ------------------------------------------------------------------------------ | ------------- |
-| `MEMORY_LEAK_HUNTER_ENABLED`              | Enable/disable memory tracking                                                 | `false`       |
-| `MEMORY_LEAK_HUNTER_SKIP_REQUESTS`        | Number of initial requests to skip (avoids class loading overhead)             | `10`          |
-| `MEMORY_LEAK_HUNTER_MEMORY_THRESHOLD_MB`  | Minimum memory difference (MB) to track a request                              | `1`           |
-| `MEMORY_LEAK_HUNTER_RAM_BEFORE_THRESHOLD` | Minimum RAM usage (MB) before tracking (prevents tracking low-memory requests) | `0`           |
-| `MEMORY_LEAK_HUNTER_MAX_STORED_URLS`      | Maximum number of URLs to store in Redis                                       | `20`          |
-| `MEMORY_LEAK_HUNTER_REDIS_KEY`            | Name of environment variable containing Redis URL (e.g., `REDISCLOUD_URL`)     | `REDIS_URL`   |
+| `MEMORY_GROWTH_TRACKER_ENABLED`              | Enable/disable memory tracking                                                 | `false`       |
+| `MEMORY_GROWTH_TRACKER_SKIP_REQUESTS`        | Number of initial requests to skip (avoids class loading overhead)             | `10`          |
+| `MEMORY_GROWTH_TRACKER_MEMORY_THRESHOLD_MB`  | Minimum memory difference (MB) to track a request                              | `1`           |
+| `MEMORY_GROWTH_TRACKER_RAM_BEFORE_THRESHOLD` | Minimum RAM usage (MB) before tracking (prevents tracking low-memory requests) | `0`           |
+| `MEMORY_GROWTH_TRACKER_MAX_STORED_URLS`      | Maximum number of URLs to store in Redis                                       | `20`          |
+| `MEMORY_GROWTH_TRACKER_REDIS_KEY`            | Name of environment variable containing Redis URL (e.g., `REDISCLOUD_URL`)     | `REDIS_URL`   |
 
-The gem will read the Redis connection URL from the environment variable specified in `MEMORY_LEAK_HUNTER_REDIS_KEY`, falling back to `REDIS_URL` if not specified.
+The gem will read the Redis connection URL from the environment variable specified in `MEMORY_GROWTH_TRACKER_REDIS_KEY`, falling back to `REDIS_URL` if not specified.
 
 ## Usage
 
@@ -74,7 +74,7 @@ end
 Enable memory tracking by setting:
 
 ```bash
-MEMORY_LEAK_HUNTER_ENABLED=true
+MEMORY_GROWTH_TRACKER_ENABLED=true
 ```
 
 ### ActiveAdmin Integration
