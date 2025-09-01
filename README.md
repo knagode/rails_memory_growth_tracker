@@ -1,4 +1,5 @@
 # Memory (RAM) Growth Tracker
+
 A Rails engine for detecting and tracking memory growth patterns (leaks & bloats) and memory swap operations. Helps you identify requests that consume high amounts of RAM and is compatible with Heroku.
 
 ## Features
@@ -27,7 +28,7 @@ Memory Leak Hunter helps you identify which specific requests are consuming exce
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "memory_leak_hunter", git: "https://github.com/knagode/rails_memory_leak_hunter"
+gem "memory_leak_hunter", git: "https://github.com/knagode/rails_memory_growth_tracker"
 ```
 
 And then execute:
@@ -44,8 +45,8 @@ end
 
 Configure Memory Leak Hunter using environment variables:
 
-| Environment Variable                      | Description                                                                    | Default Value |
-| ----------------------------------------- | ------------------------------------------------------------------------------ | ------------- |
+| Environment Variable                         | Description                                                                    | Default Value |
+| -------------------------------------------- | ------------------------------------------------------------------------------ | ------------- |
 | `MEMORY_GROWTH_TRACKER_ENABLED`              | Enable/disable memory tracking                                                 | `false`       |
 | `MEMORY_GROWTH_TRACKER_SKIP_REQUESTS`        | Number of initial requests to skip (avoids class loading overhead)             | `10`          |
 | `MEMORY_GROWTH_TRACKER_MEMORY_THRESHOLD_MB`  | Minimum memory difference (MB) to track a request                              | `1`           |
